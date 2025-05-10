@@ -1,0 +1,165 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  padding: 40px;
+}
+
+/* To-Do App Container */
+.todo-app {
+  background-color: white;
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 40px 30px 70px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 30px black;
+}
+
+/* Navigation Styles */
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav h2 {
+  color: rgb(88, 79, 79);
+  font-family: sans-serif;
+}
+
+nav img {
+  height: 30px;
+  margin-left: 10px;
+}
+
+/* Row containing input and button */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.row input {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.row button {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 30px;
+  font-family: sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+  align-self: center; /* Center the button on larger screens */
+}
+
+/* Button Hover Effect */
+.row button:hover {
+  background-color: #c82333;
+}
+
+/* List Item Styling */
+.list ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.list ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 15px 45px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.list ul li::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("uncheck.svg");
+  background-size: cover;
+  height: 20px;
+  width: 20px;
+}
+
+.list ul li.uncheck::before {
+  background-image: url("check.svg");
+}
+
+.list ul li.uncheck {
+  background-color: #198754;
+  color: white;
+}
+
+.list ul li span {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #dc3545;
+  cursor: pointer;
+}
+
+/* Media Query for smaller screens (Mobile & Tablet) */
+@media (max-width: 768px) {
+  .todo-app {
+    padding: 30px 20px 60px;
+    margin: 70px 20px;
+  }
+
+  .row {
+    flex-direction: column; /* Stack input and button vertically */
+    align-items: stretch;
+  }
+
+  .row input {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .row button {
+    padding: 12px 30px;
+    font-size: 16px;
+    width: 100%; /* Make button full width on small screens */
+    margin-top: 10px;
+    align-self: flex-end; /* Move button to the right */
+  }
+
+  .list ul li {
+    font-size: 17px;
+    padding: 15px 40px;
+  }
+
+  nav h2 {
+    font-size: 18px;
+  }
+
+  nav img {
+    height: 20px;
+  }
+}
