@@ -100,14 +100,14 @@ nav img {
   left: 15px;
   top: 50%;
   transform: translateY(-50%);
-  background-image: url("uncheck.svg");
+  background-image: url("un.svg");
   background-size: cover;
   height: 20px;
   width: 20px;
 }
 
 .list ul li.uncheck::before {
-  background-image: url("check.svg");
+  background-image: url("ch.svg");
 }
 
 .list ul li.uncheck {
